@@ -1,0 +1,14 @@
+import pandas as pd 
+from openpyxl import load_workbook
+from pandas import DataFrame as df
+
+df0 = pd.read_excel('Sample.xlsx', sheet_name='Clarity')
+df1=df(df0,columns=['Clarity ID', 'PID', 'Project Name', 'Phase', 'Week Start Date', 'Week End Date', 'Actuals'])
+
+df2 = pd.read_excel('Sample.xlsx', sheet_name='ETC',)
+df3= 
+
+with pd.ExcelWriter('Sample.xlsx') as writer:    
+    df1.to_excel(writer, 'a', index=False)   
+    df2.to_excel(writer, 'b',index=False)   
+    writer.save()
